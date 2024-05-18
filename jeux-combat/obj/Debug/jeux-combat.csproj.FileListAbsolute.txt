@@ -1,0 +1,7 @@
+E:\T E C\C#\jeux-combat\jeux-combat\bin\Debug\jeux-combat.exe.config
+E:\T E C\C#\jeux-combat\jeux-combat\bin\Debug\jeux-combat.exe
+E:\T E C\C#\jeux-combat\jeux-combat\bin\Debug\jeux-combat.pdb
+E:\T E C\C#\jeux-combat\jeux-combat\obj\Debug\jeux-combat.csproj.AssemblyReference.cache
+E:\T E C\C#\jeux-combat\jeux-combat\obj\Debug\jeux-combat.csproj.CoreCompileInputs.cache
+E:\T E C\C#\jeux-combat\jeux-combat\obj\Debug\jeux-combat.exe
+E:\T E C\C#\jeux-combat\jeux-combat\obj\Debug\jeux-combat.pdb
