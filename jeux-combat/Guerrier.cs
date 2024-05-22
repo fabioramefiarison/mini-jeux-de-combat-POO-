@@ -14,6 +14,27 @@ namespace jeux_combat
 		private int attaque;
 		private int defense;
 		private int sante;
+		private int mana;
+
+		//constructeurs
+		public Guerrier(string guerrierNom, int guerrierAttaque, int guerrierDefense, int guerrierSante)
+		{
+			this.nom = guerrierNom;
+			this.attaque = guerrierAttaque;
+			this.defense = guerrierDefense;
+			this.sante = guerrierSante;
+
+		}
+
+		//constructeurs avec propriété mana
+		public Guerrier(string guerrierNom, int guerrierAttaque, int guerrierDefense, int guerrierSante, int guerrierMana = 100)
+		{
+			this.nom = guerrierNom;
+			this.attaque = guerrierAttaque;
+			this.defense = guerrierDefense;
+			this.sante = guerrierSante;
+			this.mana = guerrierMana;
+		}
 
 		//encapsulations des données
 		public string Name
@@ -36,14 +57,11 @@ namespace jeux_combat
 			get { return this.sante; }
 			set { this.sante = value; }
 		}
-		//constructeurs
-		public Guerrier(string guerrierNom, int guerrierAttaque, int guerrierDefense, int guerrierSante)
-		{
-			this.nom = guerrierNom;
-			this.attaque = guerrierAttaque;
-			this.defense = guerrierDefense;
-			this.sante = guerrierSante;
 
+		public int Mana
+		{
+			get { return this.mana; }
+			set { this.mana = value; }
 		}
 
 		//méthode pour lancer l'attaque
@@ -56,9 +74,6 @@ namespace jeux_combat
 					Console.WriteLine(nomCible.nom + " est mort(e) !");
 				}
 			}
-
-			Affichage();
-			nomCible.Affichage();
 		}
 
 		public void LancerAttaqueAvecDefense (Guerrier nomCible)
@@ -70,20 +85,31 @@ namespace jeux_combat
 			else if (this.Attaque < nomCible.Defense)
             {
 				this.Sante = Attaque - nomCible.Defense;
-				if (nomCible.sante < 0)
+				if (this.Sante < 0)
 				{
 					Console.WriteLine(this.nom + " est mort(e) !");
 				}
 			}
-			Affichage();
-			nomCible.Affichage();
+			else
+            {
+				Console.WriteLine("égalité entre eux !");
+            }
         }
 
+		//méthode Affichages
 		public void Affichage()
         {
-			Console.WriteLine("nom : " + this.nom + " " + this.attaque + " " + this.defense + " " + this.sante);
+			Console.WriteLine("Personnage  " + this.nom + " : " + " Attaque(" + this.attaque + ") Défense(" + this.defense + ") " + "Santé(" + this.sante + ")");
         }
 
-
+		public void ActiveSoin ()
+        {
+			this.sante += 10;
+			this.mana -= 10;
+			if (this.mana == 0)
+            {
+				Console.WriteLine("Mana ne peut pas se lancer !");
+            }
+        }
 	}
 }
